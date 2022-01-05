@@ -15,3 +15,8 @@ maintainers:
   name: aanogueira
 sources:
 - https://techninityworks.github.io/helm-charts/charts/prometheus-velero-exporter
+dependencies:
+- condition: velero.enabled
+  name: velero
+  repository: https://charts.velero.io/
+  version: 2.27.1

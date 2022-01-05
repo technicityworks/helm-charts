@@ -34,6 +34,7 @@ spec:
       - name: statsd-exporter
         image: prom/statsd-exporter
         imagePullPolicy: Always
+        resources: {}
         ports:
         - containerPort: 9102
         - containerPort: 9125
@@ -56,7 +57,6 @@ spec:
             value: "8125"
         image: gcr.io/heptio-images/velero:v1.1.0
         imagePullPolicy: IfNotPresent
-        name: velero-exporter
         resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File

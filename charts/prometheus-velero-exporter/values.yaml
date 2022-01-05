@@ -1,7 +1,7 @@
 nameOverride: ""
 fullnameOverride: ""
 
-namespace: ""
+namespace: velero
 
 podLabels: {}
 
