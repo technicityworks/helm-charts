@@ -18,5 +18,5 @@ sources:
 dependencies:
 - name: velero
   condition: velero.enabled
-  repository: https://charts.velero.io/
+  repository: https://vmware-tanzu.github.io/helm-charts
   version: 2.27.1
