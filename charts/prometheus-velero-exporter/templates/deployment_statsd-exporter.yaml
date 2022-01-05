@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "prometheus-velero-exporter.fullname" . }}-statsd-exporter
+  name: {{ template "prometheus-velero-exporter.fullname" . }}-statsd
   labels:
     app.kubernetes.io/name: {{ include "prometheus-velero-exporter.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
@@ -51,7 +51,7 @@ spec:
           - "/bin/statsd-get.sh"
         env:
           - name: STATSD_HOST
-            value: "{{ template "prometheus-velero-exporter.fullname" . }}-statsd-exporter"
+            value: "{{ template "prometheus-velero-exporter.fullname" . }}-statsd"
           - name: STATSD_PORT
             value: "8125"
         image: gcr.io/heptio-images/velero:v1.1.0

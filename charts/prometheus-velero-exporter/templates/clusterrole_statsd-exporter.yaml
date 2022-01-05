@@ -1,0 +1,24 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ template "prometheus-velero-exporter.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "prometheus-velero-exporter.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "prometheus-velero-exporter.chart" . }}
+    release: "{{ .Release.Name }}"
+    {{- with .Values.labels }}
+      {{- toYaml . | nindent 4 }}
+    {{- end }}
+rules:
+- apiGroups:
+  - velero.io
+  resources:
+  - schedules
+  - backups
+  verbs:
+  - list
+  - get
+  - watch
