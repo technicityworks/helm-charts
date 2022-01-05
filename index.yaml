@@ -3,6 +3,30 @@ entries:
   prometheus-velero-exporter:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-01-05T14:40:45.609860624Z"
+    dependencies:
+    - condition: velero.enabled
+      name: velero
+      repository: https://vmware-tanzu.github.io/helm-charts/
+      version: 2.27.1
+    description: A Helm chart to export the metrics from Velero in Prometheus format using the statsd-exporter and velero service monitor from https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero
+    digest: 5a9496961a7936632944b48de922883a30dfeb90c6c45d16521786f0019381eb
+    home: https://github.com/technicityworks/prometheus-velero-exporter
+    keywords:
+    - prometheus
+    - velero
+    maintainers:
+    - email: aanogueira@protonmail.com
+      name: aanogueira
+    name: prometheus-velero-exporter
+    sources:
+    - https://technicityworks.github.io/helm-charts/charts/prometheus-velero-exporter
+    type: application
+    urls:
+    - https://github.com/technicityworks/helm-charts/releases/download/prometheus-velero-exporter-0.1.1/prometheus-velero-exporter-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-01-05T13:50:11.232365282Z"
     dependencies:
     - condition: velero.enabled
