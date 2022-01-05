@@ -1,7 +1,7 @@
 apiVersion: v2
 name: prometheus-velero-exporter
 type: application
-version: 0.1.1
+version: 0.1.0
 appVersion: "1.16.0"
 description: A Helm chart to export the metrics from Velero in Prometheus format
   using the statsd-exporter and velero service monitor from
