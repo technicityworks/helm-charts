@@ -1,0 +1,38 @@
+nameOverride: ""
+fullnameOverride: ""
+
+namespace: ""
+
+podLabels: {}
+
+serviceAccount:
+  create: true
+  name: ""
+
+service:
+  type: ClusterIP
+  port:
+    to: 8125
+    from: 9102
+  targetPort:
+    to: 9125
+    from: 9102
+
+serviceMonitor:
+  enabled: true
+  additionalLabels: {}
+  scrapeInterval: 30s
+  scrapeTimeout: 10s
+  namespace: ""
+
+velero:
+  enabled: false
+  releaseName: velero
+  instanceName: velero
+  namespace: velero
+  serviceMonitor:
+    enabled: true
+    additionalLabels: {}
+    scrapeInterval: 30s
+    scrapeTimeout: 10s
+    namespace: ""

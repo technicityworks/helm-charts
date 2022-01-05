@@ -1,0 +1,31 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ template "prometheus-velero-exporter.fullname" . }}-statsd
+  {{- if .Values.serviceMonitor.namespace }}
+  namespace: {{ .Values.serviceMonitor.namespace }}
+  {{- end }}
+  labels:
+    app.kubernetes.io/name: {{ include "prometheus-velero-exporter.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    helm.sh/chart: {{ include "prometheus-velero-exporter.chart" . }}
+    release: "{{ .Release.Name }}"
+  {{- with .Values.serviceMonitor.additionalLabels }}
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  endpoints:
+  - path: /metrics
+    port: tcp
+    scheme: http
+    interval: {{ .Values.velero.serviceMonitor.scrapeInterval }}
+    scrapeTimeout: {{ .Values.velero.serviceMonitor.scrapeTimeout }}
+  namespaceSelector:
+    matchNames:
+    - {{ .Values.namespace }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "prometheus-velero-exporter.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
