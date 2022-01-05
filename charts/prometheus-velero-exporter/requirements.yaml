@@ -1,0 +1,5 @@
+dependencies:
+- name: velero
+  condition: velero.enabled
+  repository: https://charts.velero.io/
+  version: 2.27.1
