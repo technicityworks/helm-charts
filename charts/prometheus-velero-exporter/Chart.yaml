@@ -14,7 +14,7 @@ maintainers:
 - email: aanogueira@protonmail.com
   name: aanogueira
 sources:
-- https://techninityworks.github.io/helm-charts/charts/prometheus-velero-exporter
+- https://technicityworks.github.io/helm-charts/charts/prometheus-velero-exporter
 dependencies:
 - name: velero
   condition: velero.enabled
