@@ -3,7 +3,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ template "prometheus-velero-exporter.fullname" . }}-statsd-exporter
-  namespace: {{ .Values.namespace }}
   labels:
     app.kubernetes.io/name: {{ include "prometheus-velero-exporter.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}

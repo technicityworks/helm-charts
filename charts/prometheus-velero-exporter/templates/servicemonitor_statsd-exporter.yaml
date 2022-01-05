@@ -24,7 +24,7 @@ spec:
     scrapeTimeout: {{ .Values.velero.serviceMonitor.scrapeTimeout }}
   namespaceSelector:
     matchNames:
-    - {{ .Values.namespace }}
+    - {{ .Release.Namespace }}
   selector:
     matchLabels:
       app.kubernetes.io/name: {{ include "prometheus-velero-exporter.name" . }}
