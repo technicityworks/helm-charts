@@ -16,5 +16,5 @@ sources:
 dependencies:
 - condition: kafka.enabled
   name: kafka
-  repository: https://charts.bitnami.com/bitnami
+  repository: http://charts.bitnami.com/bitnami
   version: 12.6.3
