@@ -14,7 +14,7 @@ maintainers:
 sources:
 - https://technicityworks.github.io/helm-charts/charts/prometheus-kafka-exporter
 dependencies:
-- condition: kafka.enabled
-  name: kafka
-  repository: http://charts.bitnami.com/bitnami
+- name: kafka
+  condition: kafka.enabled
+  repository: https://charts.bitnami.com/bitnami
   version: 12.6.3
