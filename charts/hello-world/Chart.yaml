@@ -1,0 +1,12 @@
+apiVersion: v2
+name: hello-world
+appVersion: "1.16.0"
+version: 0.1.1
+description: hello-world chart that runs on kubernetes
+keywords:
+- hello-world
+maintainers:
+- email: aanogueira@protonmail.com
+  name: aanogueira
+sources:
+- https://technicityworks.github.io/helm-charts/charts/hello-world
