@@ -1,5 +1,22 @@
 apiVersion: v1
 entries:
+  hello-world:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-01-25T12:08:51.025489676Z"
+    description: hello-world chart that runs on kubernetes
+    digest: f46f8909bc43676da9c91eb284bd0e3360dc3d4eccac9ce95bc996810bb93fdc
+    keywords:
+    - hello-world
+    maintainers:
+    - email: aanogueira@protonmail.com
+      name: aanogueira
+    name: hello-world
+    sources:
+    - https://technicityworks.github.io/helm-charts/charts/hello-world
+    urls:
+    - https://github.com/technicityworks/helm-charts/releases/download/hello-world-0.1.1/hello-world-0.1.1.tgz
+    version: 0.1.1
   prometheus-kafka-exporter:
   - apiVersion: v2
     appVersion: 1.16.0
