@@ -13,8 +13,8 @@ metadata:
 spec:
   ports:
   - name: http
-    port: 80
+    port: 8080
     protocol: TCP
-    targetPort: 80
+    targetPort: 8080
   selector:
     app: {{ template "fullname" . }}
