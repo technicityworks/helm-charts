@@ -3,6 +3,22 @@ entries:
   hello-world:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-01-25T14:01:47.026221102Z"
+    description: hello-world chart that runs on kubernetes
+    digest: fc83fbd19549616ca8628cbc0b149e1c43f8dc5c598c9ed6f3a1bfded5e277f9
+    keywords:
+    - hello-world
+    maintainers:
+    - email: aanogueira@protonmail.com
+      name: aanogueira
+    name: hello-world
+    sources:
+    - https://technicityworks.github.io/helm-charts/charts/hello-world
+    urls:
+    - https://github.com/technicityworks/helm-charts/releases/download/hello-world-0.1.3/hello-world-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-01-25T12:13:17.012041129Z"
     description: hello-world chart that runs on kubernetes
     digest: 27b3abd587522c7eee2400d92f55dfc5319145ea607a1083bed6c38ff3a59fef
