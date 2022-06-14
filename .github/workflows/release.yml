@@ -14,6 +14,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Helm Deps
+        run: |
+          helm add bitnami https://charts.bitnami.com/bitnami
+          helm add vmware-tanzu https://vmware-tanzu.github.io/helm-charts
+          helm add prefecthq https://prefecthq.github.io/server/
+
       - name: Configure Git
         run: |
           git config user.name "$GITHUB_ACTOR"
