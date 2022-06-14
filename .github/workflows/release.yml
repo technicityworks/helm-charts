@@ -16,9 +16,9 @@ jobs:
 
       - name: Helm Dependencies
         run: |
-          helm add bitnami https://charts.bitnami.com/bitnami
-          helm add vmware-tanzu https://vmware-tanzu.github.io/helm-charts
-          helm add prefecthq https://prefecthq.github.io/server/
+          helm repo add bitnami https://charts.bitnami.com/bitnami
+          helm repo add vmware-tanzu https://vmware-tanzu.github.io/helm-charts
+          helm repo add prefecthq https://prefecthq.github.io/server/
 
       - name: Configure Git
         run: |
