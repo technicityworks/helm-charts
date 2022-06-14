@@ -1,0 +1,81 @@
+apiVersion: v1
+entries:
+  prometheus-kafka-exporter:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-06-14T18:52:09.543242395Z"
+    dependencies:
+    - condition: kafka.enabled
+      name: kafka
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.2.6
+    description: A Helm chart to export the metrics from Kafka in Prometheus format
+      using the kafka-exporter from https://github.com/danielqsj/kafka_exporter
+    digest: c00d3cd85aaadc3b8025ec5f290ca54607ea96c581eac2969aa0905500de1d3d
+    home: https://github.com/technicityworks/prometheus-kafka-exporter
+    keywords:
+    - prometheus
+    - kafka
+    maintainers:
+    - email: aanogueira@protonmail.com
+      name: aanogueira
+    name: prometheus-kafka-exporter
+    sources:
+    - https://technicityworks.github.io/helm-charts/charts/prometheus-kafka-exporter
+    urls:
+    - https://github.com/technicityworks/helm-charts/releases/download/prometheus-kafka-exporter-0.1.1/prometheus-kafka-exporter-0.1.1.tgz
+    version: 0.1.1
+  prometheus-prefect-exporter:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2022-06-14T18:52:09.758078959Z"
+    dependencies:
+    - condition: prefect-server.enabled
+      name: prefect-server
+      repository: https://prefecthq.github.io/server/
+      version: 2022.04.14
+    description: A Helm chart to export the metrics from Prefect in Prometheus format
+      using the custom built GraphQL exporter
+    digest: bedbaf538c0e158ad0bf1f86c27b70a7b07506cfb5c6a8f0edaf8928db1778a1
+    home: https://github.com/technicityworks/prometheus-prefect-exporter
+    keywords:
+    - prometheus
+    - prefect
+    - graphql
+    maintainers:
+    - email: aanogueira@protonmail.com
+      name: aanogueira
+    name: prometheus-prefect-exporter
+    sources:
+    - https://technicityworks.github.io/helm-charts/charts/prometheus-velero-exporter
+    type: application
+    urls:
+    - https://github.com/technicityworks/helm-charts/releases/download/prometheus-prefect-exporter-0.0.1/prometheus-prefect-exporter-0.0.1.tgz
+    version: 0.0.1
+  prometheus-velero-exporter:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-06-14T18:52:09.991783803Z"
+    dependencies:
+    - condition: velero.enabled
+      name: velero
+      repository: https://vmware-tanzu.github.io/helm-charts/
+      version: 2.27.1
+    description: A Helm chart to export the metrics from Velero in Prometheus format
+      using the statsd-exporter and velero service monitor from https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero
+    digest: 38d26a59ccec3fc5dd78c18be255eb52da4003e5655799a320f350ca91c8d67d
+    home: https://github.com/technicityworks/prometheus-velero-exporter
+    keywords:
+    - prometheus
+    - velero
+    maintainers:
+    - email: aanogueira@protonmail.com
+      name: aanogueira
+    name: prometheus-velero-exporter
+    sources:
+    - https://technicityworks.github.io/helm-charts/charts/prometheus-velero-exporter
+    type: application
+    urls:
+    - https://github.com/technicityworks/helm-charts/releases/download/prometheus-velero-exporter-0.1.1/prometheus-velero-exporter-0.1.1.tgz
+    version: 0.1.1
+generated: "2022-06-14T18:52:09.991794202Z"
