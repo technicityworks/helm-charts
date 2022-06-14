@@ -1,6 +1,6 @@
 apiVersion: v2
 name: prometheus-kafka-exporter
-appVersion: "1.16.0"
+appVersion: 1.16.0
 version: 0.1.1
 description: A Helm chart to export the metrics from Kafka in Prometheus format using
   the kafka-exporter from https://github.com/danielqsj/kafka_exporter
@@ -17,4 +17,4 @@ dependencies:
 - name: kafka
   condition: kafka.enabled
   repository: https://charts.bitnami.com/bitnami
-  version: 12.6.3
+  version: 17.2.6
