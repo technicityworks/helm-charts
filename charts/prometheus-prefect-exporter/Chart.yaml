@@ -1,0 +1,22 @@
+apiVersion: v2
+name: prometheus-prefect-exporter
+type: application
+version: 0.0.1
+appVersion: 0.0.1
+description: A Helm chart to export the metrics from Prefect in Prometheus format
+  using the custom built GraphQL exporter
+home: https://github.com/technicityworks/prometheus-prefect-exporter
+keywords:
+- prometheus
+- prefect
+- graphql
+maintainers:
+- email: aanogueira@protonmail.com
+  name: aanogueira
+sources:
+- https://technicityworks.github.io/helm-charts/charts/prometheus-velero-exporter
+dependencies:
+- name: prefect-server
+  condition: prefect-server.enabled
+  repository: https://prefecthq.github.io/server/
+  version: 2022.04.14

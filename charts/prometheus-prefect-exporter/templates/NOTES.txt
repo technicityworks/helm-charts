@@ -1,0 +1,1 @@
+Beginning to serve on port:{{ .Values.service.targetPort }}, metrics path {{ .Values.metricsPath }}

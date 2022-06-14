@@ -1,0 +1,100 @@
+# Default values for prometheus-prefect-exporter
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+fullnameOverride: ""
+nameOverride: ""
+
+image:
+  repository: aanogueira/prefect-exporter
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  # tag: ""
+
+imagePullSecrets: []
+
+podArgs: []
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  # name: ""
+
+podAnnotations: {}
+
+# Custom environment variables for the app
+metricsPath: /metrics
+scrapeDelay: 300
+graphqlEndpoint: https://prefect-apollo.example.io
+
+serviceMonitor:
+  enabled: false
+  # namespace: monitoring
+  interval: 30s
+  # If serviceMonitor is enabled and you want prometheus to automatically register
+  # target using serviceMonitor, add additionalLabels with prometheus release name
+  # e.g. If you have deployed kube-prometheus-stack with release name kube-prometheus
+  # then additionalLabels will be
+  # additionalLabels:
+  #   release: kube-prometheus
+  additionalLabels: {}
+  targetLabels: []
+
+grafanaDashboard:
+  enabled: false
+  # namespace: monitoring
+  # If grafanaDashboard is enabled and you want grafana operator to automatically register
+  # the dashboard add additionalLabels with the target labels specified in the grafana operator
+  # e.g. If you have deployed grafana operator selector like:
+  # grafana:
+  #   dashboardLabelSelectors:
+  #   - matchExpressions:
+  #       - {key: app, operator: In, values: [grafana]}
+  # then additionalLabels will be
+  # additionalLabels:
+  #   app: grafana
+  additionalLabels: {}
+
+podEnvVars: []
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  enabled: true
+  type: ClusterIP
+  port: 8080
+  targetPort: 8080
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+prefect-server:
+  enabled: false

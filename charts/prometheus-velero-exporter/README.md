@@ -66,3 +66,8 @@ helm inspect values prometheus-community/prometheus-velero-exporter
 # Helm 3
 helm show values prometheus-community/prometheus-velero-exporter
 ```
+
+
+## Dashboard
+
+Link to dashboard can be found @ [grafana/technicityworks](https://grafana.com/grafana/dashboards/15469).

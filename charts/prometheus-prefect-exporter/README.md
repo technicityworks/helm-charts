@@ -1,13 +1,14 @@
-# prometheus-kafka-exporter
+# prometheus-prefect-exporter
 
-A Prometheus exporter for [Apache Kafka](https://kafka.apache.org/) metrics.
+A Prometheus exporter for [Prefect](https://www.prefect.io/) metrics.
 
-This chart bootstraps a [Kafka Exporter](https://github.com/danielqsj/kafka_exporter) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart bootstraps a custom [exporter](https://hub.docker.com/r/aanogueira/prefect-exporter) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
 ## Prerequisites
 
 - Kubernetes 1.8+ with Beta APIs enabled
 - Prometheus ServiceMonitor CRD enabled
+- Prometheus GrafanaDashboard CRD enabled (optional: [grafana-operator](https://github.com/grafana-operator/grafana-operator))
 
 ## Get Repo Info
 
@@ -22,10 +23,10 @@ _See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation
 
 ```sh
 # Helm 3
-helm install [RELEASE_NAME] technicityworks/prometheus-kafka-exporter
+helm install [RELEASE_NAME] technicityworks/prometheus-prefect-exporter
 
 # Helm 2
-helm install --name [RELEASE_NAME] technicityworks/prometheus-kafka-exporter
+helm install --name [RELEASE_NAME] technicityworks/prometheus-prefect-exporter
 ```
 
 _See [configuration](#configuration) below._
@@ -61,12 +62,12 @@ See [Customizing the Chart Before Installing](https://helm.sh/docs/intro/using_h
 
 ```sh
 # Helm 2
-helm inspect values prometheus-community/prometheus-kafka-exporter
+helm inspect values prometheus-community/prometheus-prefect-exporter
 
 # Helm 3
-helm show values prometheus-community/prometheus-kafka-exporter
+helm show values prometheus-community/prometheus-prefect-exporter
 ```
 
 ## Dashboard
 
-Link to dashboard can be found @ [grafana/technicityworks](https://grafana.com/grafana/dashboards/15465)
+Link to dashboard can be found @ [grafana/technicityworks](https://grafana.com/grafana/dashboards/16198)
