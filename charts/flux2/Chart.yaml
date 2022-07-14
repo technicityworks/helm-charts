@@ -1,7 +1,7 @@
 apiVersion: v2
 name: flux2
 appVersion: 0.31.3
-version: 0.1.1
+version: 0.1.2
 description: A Helm chart for flux2
 home: https://github.com/fluxcd/flux2
 keywords:

@@ -4,12 +4,6 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.7.0
   creationTimestamp: null
-  labels:
-    app.kubernetes.io/instance: '{{ .Release.Namespace }}'
-    app.kubernetes.io/managed-by: '{{ .Release.Service }}'
-    app.kubernetes.io/part-of: flux
-    app.kubernetes.io/version: '{{ .Chart.AppVersion }}'
-    helm.sh/chart: '{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}'
   name: imageupdateautomations.image.toolkit.fluxcd.io
 spec:
   group: image.toolkit.fluxcd.io
@@ -167,7 +161,7 @@ spec:
                     \    Conditions []metav1.Condition `json:\"conditions,omitempty\"
                     patchStrategy:\"merge\" patchMergeKey:\"type\" protobuf:\"bytes,1,rep,name=conditions\"`
 
-     // other fields }"
+                    // other fields }"
                   properties:
                     lastTransitionTime:
                       description: lastTransitionTime is the last time the condition
@@ -440,7 +434,7 @@ spec:
                     \    Conditions []metav1.Condition `json:\"conditions,omitempty\"
                     patchStrategy:\"merge\" patchMergeKey:\"type\" protobuf:\"bytes,1,rep,name=conditions\"`
 
-     // other fields }"
+                    // other fields }"
                   properties:
                     lastTransitionTime:
                       description: lastTransitionTime is the last time the condition
@@ -569,14 +563,14 @@ spec:
                           branch:
                             description: "Branch to check out, defaults to 'master'
                               if no other field is defined.
- When GitRepositorySpec.GitImplementation
+                              When GitRepositorySpec.GitImplementation
                               is set to 'go-git', a shallow clone of the specified
                               branch is performed."
                             type: string
                           commit:
                             description: "Commit SHA to check out, takes precedence
                               over all reference fields.
- When GitRepositorySpec.GitImplementation
+                              When GitRepositorySpec.GitImplementation
                               is set to 'go-git', this can be combined with Branch
                               to shallow clone the branch, in which the commit is
                               expected to exist."
@@ -726,7 +720,7 @@ spec:
                     \    Conditions []metav1.Condition `json:\"conditions,omitempty\"
                     patchStrategy:\"merge\" patchMergeKey:\"type\" protobuf:\"bytes,1,rep,name=conditions\"`
 
-     // other fields }"
+                    // other fields }"
                   properties:
                     lastTransitionTime:
                       description: lastTransitionTime is the last time the condition

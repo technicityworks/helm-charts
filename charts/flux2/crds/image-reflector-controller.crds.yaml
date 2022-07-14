@@ -4,12 +4,6 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.7.0
   creationTimestamp: null
-  labels:
-    app.kubernetes.io/instance: '{{ .Release.Namespace }}'
-    app.kubernetes.io/managed-by: '{{ .Release.Service }}'
-    app.kubernetes.io/part-of: flux
-    app.kubernetes.io/version: '{{ .Chart.AppVersion }}'
-    helm.sh/chart: '{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}'
   name: imagepolicies.image.toolkit.fluxcd.io
 spec:
   group: image.toolkit.fluxcd.io
@@ -135,7 +129,7 @@ spec:
                     \    Conditions []metav1.Condition `json:\"conditions,omitempty\"
                     patchStrategy:\"merge\" patchMergeKey:\"type\" protobuf:\"bytes,1,rep,name=conditions\"`
 
-     // other fields }"
+                    // other fields }"
                   properties:
                     lastTransitionTime:
                       description: lastTransitionTime is the last time the condition
@@ -322,7 +316,7 @@ spec:
                     \    Conditions []metav1.Condition `json:\"conditions,omitempty\"
                     patchStrategy:\"merge\" patchMergeKey:\"type\" protobuf:\"bytes,1,rep,name=conditions\"`
 
-     // other fields }"
+                    // other fields }"
                   properties:
                     lastTransitionTime:
                       description: lastTransitionTime is the last time the condition
@@ -515,7 +509,7 @@ spec:
                     \    Conditions []metav1.Condition `json:\"conditions,omitempty\"
                     patchStrategy:\"merge\" patchMergeKey:\"type\" protobuf:\"bytes,1,rep,name=conditions\"`
 
-     // other fields }"
+                    // other fields }"
                   properties:
                     lastTransitionTime:
                       description: lastTransitionTime is the last time the condition
@@ -600,12 +594,6 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.7.0
   creationTimestamp: null
-  labels:
-    app.kubernetes.io/instance: '{{ .Release.Namespace }}'
-    app.kubernetes.io/managed-by: '{{ .Release.Service }}'
-    app.kubernetes.io/part-of: flux
-    app.kubernetes.io/version: '{{ .Chart.AppVersion }}'
-    helm.sh/chart: '{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}'
   name: imagerepositories.image.toolkit.fluxcd.io
 spec:
   group: image.toolkit.fluxcd.io
@@ -647,10 +635,10 @@ spec:
               certSecretRef:
                 description: "CertSecretRef can be given the name of a secret containing
                   either or both of
-  - a PEM-encoded client certificate (`certFile`)
+                  - a PEM-encoded client certificate (`certFile`)
                   and private  key (`keyFile`);  - a PEM-encoded CA certificate (`caFile`)
 
-  and whichever are supplied, will be used for connecting to the
+                  and whichever are supplied, will be used for connecting to the
                   \ registry. The client cert and key are useful if you are  authenticating
                   with a certificate; the CA cert is useful if  you are using a self-signed
                   server certificate."
@@ -708,7 +696,7 @@ spec:
                     \    Conditions []metav1.Condition `json:\"conditions,omitempty\"
                     patchStrategy:\"merge\" patchMergeKey:\"type\" protobuf:\"bytes,1,rep,name=conditions\"`
 
-     // other fields }"
+                    // other fields }"
                   properties:
                     lastTransitionTime:
                       description: lastTransitionTime is the last time the condition
@@ -823,10 +811,10 @@ spec:
               certSecretRef:
                 description: "CertSecretRef can be given the name of a secret containing
                   either or both of
-  - a PEM-encoded client certificate (`certFile`)
+                  - a PEM-encoded client certificate (`certFile`)
                   and private  key (`keyFile`);  - a PEM-encoded CA certificate (`caFile`)
 
-  and whichever are supplied, will be used for connecting to the
+                  and whichever are supplied, will be used for connecting to the
                   \ registry. The client cert and key are useful if you are  authenticating
                   with a certificate; the CA cert is useful if  you are using a self-signed
                   server certificate."
@@ -884,7 +872,7 @@ spec:
                     \    Conditions []metav1.Condition `json:\"conditions,omitempty\"
                     patchStrategy:\"merge\" patchMergeKey:\"type\" protobuf:\"bytes,1,rep,name=conditions\"`
 
-     // other fields }"
+                    // other fields }"
                   properties:
                     lastTransitionTime:
                       description: lastTransitionTime is the last time the condition
@@ -1027,10 +1015,10 @@ spec:
               certSecretRef:
                 description: "CertSecretRef can be given the name of a secret containing
                   either or both of
-  - a PEM-encoded client certificate (`certFile`)
+                  - a PEM-encoded client certificate (`certFile`)
                   and private  key (`keyFile`);  - a PEM-encoded CA certificate (`caFile`)
 
-  and whichever are supplied, will be used for connecting to the
+                  and whichever are supplied, will be used for connecting to the
                   \ registry. The client cert and key are useful if you are  authenticating
                   with a certificate; the CA cert is useful if  you are using a self-signed
                   server certificate."
@@ -1101,7 +1089,7 @@ spec:
                     \    Conditions []metav1.Condition `json:\"conditions,omitempty\"
                     patchStrategy:\"merge\" patchMergeKey:\"type\" protobuf:\"bytes,1,rep,name=conditions\"`
 
-     // other fields }"
+                    // other fields }"
                   properties:
                     lastTransitionTime:
                       description: lastTransitionTime is the last time the condition
