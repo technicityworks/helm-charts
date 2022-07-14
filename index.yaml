@@ -3,6 +3,24 @@ entries:
   flux2:
   - apiVersion: v2
     appVersion: 0.31.3
+    created: "2022-07-14T11:01:22.474738621Z"
+    description: A Helm chart for flux2
+    digest: ed15448a38665a03928d40e6638a4d414df07470361143035c7c3affe68dbf90
+    home: https://github.com/fluxcd/flux2
+    keywords:
+    - fluxcd
+    - flux2
+    maintainers:
+    - email: aanogueira@protonmail.com
+      name: aanogueira
+    name: flux2
+    sources:
+    - https://technicityworks.github.io/helm-charts/charts/flux2
+    urls:
+    - https://github.com/technicityworks/helm-charts/releases/download/flux2-0.1.2/flux2-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 0.31.3
     created: "2022-07-14T10:51:44.222882506Z"
     description: A Helm chart for flux2
     digest: 482c4c9f3dfaf6ab5416295c1232586ec10c1847aef61e57db4152616fe86e55
@@ -172,4 +190,4 @@ entries:
     urls:
     - https://github.com/technicityworks/helm-charts/releases/download/prometheus-velero-exporter-0.1.1/prometheus-velero-exporter-0.1.1.tgz
     version: 0.1.1
-generated: "2022-07-14T10:51:44.746232768Z"
+generated: "2022-07-14T11:01:22.474764822Z"
