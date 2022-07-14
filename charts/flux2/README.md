@@ -1,13 +1,10 @@
-# prometheus-velero-exporter
+# flux2
 
-A Prometheus exporter for [Velero](https://velero.io/) metrics.
-
-This chart bootstraps a [statsd](https://github.com/statsd/statsd) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+A Helm chart for flux2 based on [fluxcd-community](https://github.com/fluxcd-community/helm-charts/tree/main/charts/flux2).
 
 ## Prerequisites
 
 - Kubernetes 1.8+ with Beta APIs enabled
-- Prometheus ServiceMonitor CRD enabled
 
 ## Get Repo Info
 
@@ -22,10 +19,10 @@ _See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation
 
 ```sh
 # Helm 3
-helm install [RELEASE_NAME] technicityworks/prometheus-velero-exporter
+helm install [RELEASE_NAME] technicityworks/flux2
 
 # Helm 2
-helm install --name [RELEASE_NAME] technicityworks/prometheus-velero-exporter
+helm install --name [RELEASE_NAME] technicityworks/flux2
 ```
 
 _See [configuration](#configuration) below._
@@ -61,13 +58,8 @@ See [Customizing the Chart Before Installing](https://helm.sh/docs/intro/using_h
 
 ```sh
 # Helm 2
-helm inspect values technicityworks/prometheus-velero-exporter
+helm inspect values technicityworks/flux2
 
 # Helm 3
-helm show values technicityworks/prometheus-velero-exporter
+helm show values technicityworks/flux2
 ```
-
-
-## Dashboard
-
-Link to dashboard can be found @ [grafana/technicityworks](https://grafana.com/grafana/dashboards/15469).

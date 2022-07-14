@@ -1,7 +1,7 @@
 apiVersion: v2
 name: prometheus-prefect-exporter
 type: application
-version: 0.0.1
+version: 0.1.2
 appVersion: 0.0.1
 description: A Helm chart to export the metrics from Prefect in Prometheus format
   using the custom built GraphQL exporter

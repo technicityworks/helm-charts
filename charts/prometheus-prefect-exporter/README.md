@@ -62,10 +62,10 @@ See [Customizing the Chart Before Installing](https://helm.sh/docs/intro/using_h
 
 ```sh
 # Helm 2
-helm inspect values prometheus-community/prometheus-prefect-exporter
+helm inspect values technicityworks/prometheus-prefect-exporter
 
 # Helm 3
-helm show values prometheus-community/prometheus-prefect-exporter
+helm show values technicityworks/prometheus-prefect-exporter
 ```
 
 ## Dashboard
