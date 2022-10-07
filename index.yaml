@@ -55,6 +55,23 @@ entries:
     urls:
     - https://github.com/technicityworks/helm-charts/releases/download/flux2-0.1.1/flux2-0.1.1.tgz
     version: 0.1.1
+  hello-world:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2022-10-07T11:31:38.576179287Z"
+    description: hello-world chart that runs on kubernetes
+    digest: 25e1cf65f88bb2f470c0b8a22c231ae0cc59377a580162940f15894677592cb4
+    keywords:
+    - hello-world
+    maintainers:
+    - email: aanogueira@protonmail.com
+      name: aanogueira
+    name: hello-world
+    sources:
+    - https://technicityworks.github.io/helm-charts/charts/hello-world
+    urls:
+    - https://github.com/technicityworks/helm-charts/releases/download/hello-world-0.1.4/hello-world-0.1.4.tgz
+    version: 0.1.4
   prometheus-kafka-exporter:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -208,4 +225,4 @@ entries:
     urls:
     - https://github.com/technicityworks/helm-charts/releases/download/prometheus-velero-exporter-0.1.1/prometheus-velero-exporter-0.1.1.tgz
     version: 0.1.1
-generated: "2022-07-21T17:13:30.571271872Z"
+generated: "2022-10-07T11:31:38.576195188Z"
