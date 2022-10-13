@@ -4,13 +4,16 @@ kind: Service
 metadata:
   labels:
     app: {{ template "fullname" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: {{ .Release.Name | quote }}
-    heritage: {{ .Release.Service | quote }}
-    version: 1.0.0
+    chart: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    version: {{ .Chart.Version }}
+  {{- with .Values.service.annotations }}
+  annotations: {{ toYaml . | nindent 4 }}
+  {{- end }}
   name: {{ template "name" . }}
-  namespace: {{ default .Values.namespace .Release.Namespace }}
 spec:
+  type: {{ .Values.service.type }}
   ports:
   - name: http
     port: 8080

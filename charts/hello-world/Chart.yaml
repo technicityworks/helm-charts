@@ -1,7 +1,7 @@
 apiVersion: v2
 name: hello-world
-appVersion: latest
-version: 0.1.4
+appVersion: 0.0.4
+version: 0.1.5
 description: hello-world chart that runs on kubernetes
 keywords:
 - hello-world

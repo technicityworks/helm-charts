@@ -4,12 +4,14 @@ kind: Deployment
 metadata:
   labels:
     app: {{ template "fullname" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: {{ .Release.Name | quote }}
-    heritage: {{ .Release.Service | quote }}
+    chart: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
     version: {{ .Chart.Version }}
+  {{- with .Values.annotations }}
+  annotations: {{ toYaml . | nindent 4 }}
+  {{- end }}
   name: {{ template "name" . }}
-  namespace: {{ default .Values.namespace .Release.Namespace }}
 spec:
   replicas: 1
   selector:
@@ -19,16 +21,15 @@ spec:
     metadata:
       labels:
         app: {{ template "fullname" . }}
-        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-        release: {{ .Release.Name | quote }}
-        heritage: {{ .Release.Service | quote }}
-        version: 1.0.0
+        chart: {{ .Chart.Name }}
+        release: {{ .Release.Name }}
+        heritage: {{ .Release.Service }}
+        version: {{ .Chart.Version }}
     spec:
       containers:
-      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         livenessProbe:
-          initialDelaySeconds: 60
           tcpSocket:
             port: 8080
         name: hello-world
@@ -36,6 +37,5 @@ spec:
           httpGet:
             path: /
             port: 8080
-          initialDelaySeconds: 5
         securityContext:
           privileged: false

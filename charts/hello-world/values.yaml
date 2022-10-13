@@ -1,6 +1,10 @@
-namespace: default
-
 image:
   repository: aanogueira/hello-world
-  tag: latest
-  pullPolicy: Always
+  # tag: ""
+  pullPolicy: IfNotPresent
+
+annotations: {}
+
+service:
+  type: ClusterIP
+  annotations: {}
