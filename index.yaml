@@ -1,26 +1,5 @@
 apiVersion: v1
 entries:
-  aws-calico:
-  - apiVersion: v1
-    appVersion: 3.19.1
-    created: "2023-02-08T11:50:47.008267512Z"
-    description: A Helm chart for installing Calico on AWS
-    digest: b44f215467745bfdf3c73a737920c4f8cd8a637464f551196242803be9145ad1
-    icon: https://www.projectcalico.org/wp-content/uploads/2019/09/Calico_Logo_Large_Calico.png
-    name: aws-calico
-    urls:
-    - https://github.com/technicityworks/helm-charts/releases/download/aws-calico-0.3.10/aws-calico-0.3.10.tgz
-    version: 0.3.10
-  - apiVersion: v1
-    appVersion: 3.19.1
-    created: "2023-02-08T12:14:16.442528757Z"
-    description: A Helm chart for installing Calico on AWS
-    digest: 30f3472618f492fd9f801f79def5e855d7921d93a631acbac1b434a15fd4cb1e
-    icon: https://www.projectcalico.org/wp-content/uploads/2019/09/Calico_Logo_Large_Calico.png
-    name: aws-calico
-    urls:
-    - https://github.com/technicityworks/helm-charts/releases/download/aws-calico-0.3.10-mod/aws-calico-0.3.10-mod.tgz
-    version: 0.3.10-mod
   flux2:
   - apiVersion: v2
     appVersion: 0.31.3
