@@ -1,76 +1,65 @@
 # Calico on AWS
-**Note**: The recommended way to install calico on EKS is via tigera-opeartor instead of this helm-chart. 
-You can follow https://docs.aws.amazon.com/eks/latest/userguide/calico.html for detailed instructions.
 
-
-This chart installs Calico on AWS: https://docs.aws.amazon.com/eks/latest/userguide/calico.html
-
+A Helm chart for aws-calico based on [aws-calico](https://github.com/aws/eks-charts/tree/c3452adcb698e5ce865166f41462c74854a27b9d/stable/aws-calico)with updated CRD API version to `v1` instead of `v1beta1`.
 
 ## Prerequisites
 
-- Kubernetes 1.11+ running on AWS
+- Kubernetes 1.8+ with Beta APIs enabled
 
-## Installing the Chart
+## Get Repo Info
 
-First add the EKS repository to Helm:
-
-```shell
-helm repo add eks https://aws.github.io/eks-charts
+```sh
+helm repo add technicityworks https://technicityworks.github.io/helm-charts
+helm repo update
 ```
 
-Install the Calico CRDs:
+_See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation._
 
-```shell
-kubectl apply -k github.com/aws/eks-charts/tree/master/stable/aws-calico/crds
+## Install Chart
+
+```sh
+# Helm 3
+helm install [RELEASE_NAME] technicityworks/aws-calico
+
+# Helm 2
+helm install --name [RELEASE_NAME] technicityworks/aws-calico
 ```
 
-To install the chart with the release name `aws-calico` and default configuration:
+_See [configuration](#configuration) below._
 
-```shell
-$ helm install --name aws-calico --namespace kube-system eks/aws-calico
+_See [helm install](https://helm.sh/docs/helm/helm_install/) for command documentation._
+
+## Uninstall Chart
+
+```sh
+# Helm 3
+helm uninstall [RELEASE_NAME]
+
+# Helm 2
+helm delete --purge [RELEASE_NAME]
 ```
 
-To install into an EKS cluster where the CNI is already installed, you can run:
+This removes all the Kubernetes components associated with the chart and deletes the release.
 
-```shell
-helm upgrade --install --recreate-pods --force aws-calico --namespace kube-system eks/aws-calico
+_See [helm uninstall](https://helm.sh/docs/helm/helm_uninstall/) for command documentation._
+
+## Upgrading Chart
+
+```sh
+# Helm 3 or 2
+helm upgrade [RELEASE_NAME] [CHART] --install
 ```
 
-If you receive an error similar to `Error: release aws-calico failed: <resource> "aws-calico" already exists`, simply rerun the above command.
+_See [helm upgrade](https://helm.sh/docs/helm/helm_upgrade/) for command documentation._
 
 ## Configuration
 
-The following table lists the configurable parameters for this chart and their default values.
+See [Customizing the Chart Before Installing](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing). To see all configurable options with detailed comments, visit the chart's [values.yaml](./values.yaml), or run these configuration commands:
 
-| Parameter                                | Description                                             | Default                         |
-|------------------------------------------|---------------------------------------------------------|---------------------------------|
-| `calico.typha.image`                     | Calico Typha Image                                      | `quay.io/calico/typha`          |
-| `calico.typha.resources`                 | Calico Typha Resources                                  | `requests.memory: 64Mi, requests.cpu: 50m, limits.memory: 96Mi, limits.cpu: 100m` |
-| `calico.typha.logseverity`               | Calico Typha Log Severity                               | `Info`                          |
-| `calico.typha.nodeSelector`              | Calico Typha Node Selector                              | `{ beta.kubernetes.io/os: linux }` |
-| `calico.typha.podAnnotations`            | Calico Typha Node Pod Annotations                       | `{}`                            |
-| `calico.typha.podLabels`                 | Calico Typha Node Pod Labels                            | `{}`                            |
-| `calico.node.extraEnv`                   | Calico Node extra ENV vars                              | `[]`                            |
-| `calico.node.image`                      | Calico Node Image                                       | `quay.io/calico/node`           |
-| `calico.node.resources`                  | Calico Node Resources                                   | `requests.memory: 32Mi, requests.cpu: 20m, limits.memory: 64Mi, limits.cpu: 100m` |
-| `calico.node.logseverity`                | Calico Node Log Severity                                | `Info`                          |
-| `calico.node.nodeSelector`               | Calico Node Node Selector                               | `{ beta.kubernetes.io/os: linux }` |
-| `calico.node.podAnnotations`             | Calico Node Pod Annotations                             | `{}`                            |
-| `calico.node.podLabels`                  | Calico Node Pod Labels                                  | `{}`                            |
-| `calico.typha_autoscaler.resources`      | Calico Typha Autoscaler Resources                       | `requests.memory: 16Mi, requests.cpu: 10m, limits.memory: 32Mi, limits.cpu: 10m` |
-| `calico.typha_autoscaler.nodeSelector`   | Calico Typha Autoscaler Node Selector                   | `{ beta.kubernetes.io/os: linux }` |
-| `calico.typha_autoscaler.podAnnotations` | Calico Typha Autoscaler Pod Annotations                 | `{}`                            |
-| `calico.typha_autoscaler.podLabels`      | Calico Typha Autoscaler Pod Labels                      | `{}`                            |
-| `calico.tag`                             | Calico version                                          | `v3.8.1`                        |
-| `fullnameOverride`                       | Override the fullname of the chart                      | `calico`                        |
-| `podSecurityPolicy.create`               | Specifies whether podSecurityPolicy and related rbac objects should be created    | `false`                          |
-| `serviceAccount.name`                    | The name of the ServiceAccount to use                   | `nil`                           |
-| `serviceAccount.create`                  | Specifies whether a ServiceAccount should be created    | `true`                          |
-| `autoscaler.image`                       | Cluster Proportional Autoscaler Image                   | `k8s.gcr.io/cluster-proportional-autoscaler-amd64` |
-| `autoscaler.tag`                         | Cluster Proportional Autoscaler version                 | `1.1.2`                                            |
+```sh
+# Helm 2
+helm inspect values technicityworks/aws-calico
 
-Specify each parameter using the `--set key=value[,key=value]` argument to `helm install` or provide a YAML file containing the values for the above parameters:
-
-```shell
-$ helm install --name aws-calico --namespace kube-system eks/aws-calico --values values.yaml
+# Helm 3
+helm show values technicityworks/aws-calico
 ```
