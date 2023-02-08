@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  aws-calico:
+  - apiVersion: v1
+    appVersion: 3.19.1
+    created: "2023-02-08T15:01:21.691816507Z"
+    description: A Helm chart for installing Calico on AWS
+    digest: 174bf9712f74c0347a02df56790652974792bd096892975474033752acf48a39
+    icon: https://www.projectcalico.org/wp-content/uploads/2019/09/Calico_Logo_Large_Calico.png
+    name: aws-calico
+    urls:
+    - https://github.com/technicityworks/helm-charts/releases/download/aws-calico-0.3.10/aws-calico-0.3.10.tgz
+    version: 0.3.10
   flux2:
   - apiVersion: v2
     appVersion: 0.31.3
@@ -241,4 +252,4 @@ entries:
     urls:
     - https://github.com/technicityworks/helm-charts/releases/download/prometheus-velero-exporter-0.1.1/prometheus-velero-exporter-0.1.1.tgz
     version: 0.1.1
-generated: "2023-02-08T12:14:16.442633555Z"
+generated: "2023-02-08T15:01:21.691861507Z"
