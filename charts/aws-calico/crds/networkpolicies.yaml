@@ -1,0 +1,19 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: networkpolicies.crd.projectcalico.org
+spec:
+  conversion:
+    strategy: None
+  group: crd.projectcalico.org
+  names:
+    kind: NetworkPolicy
+    listKind: NetworkPolicyList
+    plural: networkpolicies
+    singular: networkpolicy
+  preserveUnknownFields: true
+  scope: Namespaced
+  versions:
+  - name: v1
+    served: true
+    storage: true
