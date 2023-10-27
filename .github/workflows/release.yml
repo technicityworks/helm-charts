@@ -19,6 +19,7 @@ jobs:
           helm repo add bitnami https://charts.bitnami.com/bitnami
           helm repo add vmware-tanzu https://vmware-tanzu.github.io/helm-charts
           helm repo add prefecthq https://prefecthq.github.io/server/
+          helm repo add dandydeveloper https://dandydeveloper.github.io/charts/
 
       - name: Configure Git
         run: |
